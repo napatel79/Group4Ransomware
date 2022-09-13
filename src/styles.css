@@ -1,0 +1,18 @@
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-color: orange;
+    text-align: center;
+    background-position: 100%;
+    
+}
+
+.body {
+    padding: 100;
+    text-align: center;
+    background-color: lightgray;
+}
