@@ -26,6 +26,7 @@ class CheckWallet:
             time.sleep(45)
             balance = self.getBalance()
             run -= 1
+        return True
 
 
 #  https://www.blockonomics.co/api/price?currency=USD

