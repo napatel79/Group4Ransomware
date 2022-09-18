@@ -16,8 +16,10 @@ class PopUp(tk.Tk):
         self.resizable(0,0)
         self.set_topmost_window()
         self.protocol("WM_DELETE_WINDOW", self.exit_attempt)
-        window_note = Label(self, text = ransom_note, fg='red', font=("Helvetica", 16))
-        window_note.place(x=50, y=50)
+        w = Text(self, height=50, borderwidth=0, fg='red', font=("Helvetica", 16))
+        w.insert(1.0, ransom_note)
+        w.place(x=50, y=50)
+        w.pack()
 
     def exit_attempt(self):
         self.__init__
@@ -26,6 +28,11 @@ class PopUp(tk.Tk):
         self.lift()
         self.attributes("-topmost",1)
         self.attributes("-topmost",0)
+    
+    def exit(self):
+        self.destroy()
+
+
 
 if __name__ == '__main__':
     PopUp().mainloop()
