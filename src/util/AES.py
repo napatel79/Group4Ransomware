@@ -12,11 +12,11 @@ class aes:
 
     def encrypt(self, file_to_encrypt: str):
         with open(file_to_encrypt, 'rb') as to_encrypt, tempfile.TemporaryFile() as encrypted_file:
-            encrypted_file.write(self.enc.encrypt(
-                pad(to_encrypt.read(), AES.block_size)))
+            encryptedContent = self.enc.encrypt(pad(to_encrypt.read(), AES.block_size))
+            encrypted_file.write(encryptedContent)#write the encrypted content in temp file
             encrypted_file.seek(0)
             to_encrypt.close()
-            with open(file_to_encrypt, 'wb') as to_encrypt:
+            with open(file_to_encrypt, 'wb') as to_encrypt:#replace the content of the file with encrypted
                 to_encrypt.write(encrypted_file.read())
 
     def decrypt(self, file_to_decrypt: str):

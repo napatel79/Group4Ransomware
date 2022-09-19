@@ -2,7 +2,6 @@ import requests
 import time 
 
 class CheckWallet:
-    
     def __init__(self):
         self.btc_address = '34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo'
         
