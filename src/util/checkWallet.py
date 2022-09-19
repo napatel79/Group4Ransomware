@@ -20,13 +20,16 @@ class CheckWallet:
 
     def waitForDeposit(self):
         balance = self.getBalance()
-        newBalance = balance+.025
+        newBalance = float(balance)+.025
         run = 1
-        while balance >= newBalance and run !=0:
+        while float(balance) < float(newBalance) and run !=0:
             time.sleep(45)
             balance = self.getBalance()
             run -= 1
+        print("done waiting")
         return True
 
-
 #  https://www.blockonomics.co/api/price?currency=USD
+
+
+# find testing -type f -name "*.pdf" -exec sha256sum {} + > hash.sha256

@@ -10,6 +10,7 @@ ransom_note = """           All of your .txt, .ppt, .pdf files have been encrypt
 
 class PopUp(tk.Tk):
     def __init__(self):
+        # super.__init__(self)
         tk.Tk.__init__(self)
         self.title("Ransom Note")
         self.geometry("800x250")
@@ -28,9 +29,6 @@ class PopUp(tk.Tk):
         self.lift()
         self.attributes("-topmost",1)
         self.attributes("-topmost",0)
-    
-    def exit(self):
-        self.destroy()
 
 
 
