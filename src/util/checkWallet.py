@@ -1,3 +1,4 @@
+from os import lseek
 import requests
 import time 
 
@@ -28,8 +29,3 @@ class CheckWallet:
             run -= 1
         print("done waiting")
         return True
-
-#  https://www.blockonomics.co/api/price?currency=USD
-
-
-# find testing -type f -name "*.pdf" -exec sha256sum {} + > hash.sha256
