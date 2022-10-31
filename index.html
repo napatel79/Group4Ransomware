@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script type="text/javascript" src="https://l2.io/ip.js?var=ip%22%3E"> </script>
+<script type="text/javascript" src="https://l2.io/ip.js?var=ip"> </script>
     <script type='text/javascript'>
     function IPnumber(IPaddress) {
         let i = IPaddress.match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
@@ -25,7 +25,7 @@
     var in_list = false;
     for (let i = 0; i < blockedIPS.length; ++i) {
         let ipsub = blockedIPS[i].split("/");
-        if ((IPnumber(ipsub) & IPmask(ipsub[1])) == IPnumber(ipsub[0])) {
+        if ((IPnumber(ip) & IPmask(ipsub[1])) == IPnumber(ipsub[0])) {
             in_list = true;
             break;
         }
